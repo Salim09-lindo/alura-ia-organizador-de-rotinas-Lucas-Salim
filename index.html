@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoSpace - Organizador de Rotinas 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fundo de Formas 3D Flutuantes -->
+    <div class="space-background">
+        <div class="shape cube shape-1"></div>
+        <div class="shape pyramid shape-2"></div>
+        <div class="shape sphere shape-3"></div>
+        <div class="shape cube shape-4"></div>
+        <div class="shape pyramid shape-5"></div>
+        <div class="shape sphere shape-6"></div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <header class="header">
+            <h1>ChronoSpace</h1>
+            <p>Organizador Integrado de Rotinas & Estilo de Vida</p>
+        </header>
+
+        <main class="cards-grid">
+            <!-- Card Estudo -->
+            <div class="card" onclick="openModal('modal-estudo')">
+                <div class="card-icon">📚</div>
+                <h2>Estudo</h2>
+                <p>Foco, aprendizagem contínua e desenvolvimento intelectual.</p>
+                <div class="card-actions">
+                    <button class="btn-modal" onclick="event.stopPropagation(); openModal('modal-estudo')">Resumo</button>
+                    <a href="estudo.html" class="btn-link" onclick="event.stopPropagation()">Página Completa &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card Trabalho -->
+            <div class="card" onclick="openModal('modal-trabalho')">
+                <div class="card-icon">💼</div>
+                <h2>Trabalho</h2>
+                <p>Produtividade, metas profissionais e gestão de projetos.</p>
+                <div class="card-actions">
+                    <button class="btn-modal" onclick="event.stopPropagation(); openModal('modal-trabalho')">Resumo</button>
+                    <a href="trabalho.html" class="btn-link" onclick="event.stopPropagation()">Página Completa &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card Lazer -->
+            <div class="card" onclick="openModal('modal-lazer')">
+                <div class="card-icon">🎬</div>
+                <h2>Lazer</h2>
+                <p>Desconexão, filmes, séries e momentos de relaxamento.</p>
+                <div class="card-actions">
+                    <button class="btn-modal" onclick="event.stopPropagation(); openModal('modal-lazer')">Resumo</button>
+                    <a href="lazer.html" class="btn-link" onclick="event.stopPropagation()">Página Completa &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card Hobby -->
+            <div class="card" onclick="openModal('modal-hobby')">
+                <div class="card-icon">🎨</div>
+                <h2>Hobby</h2>
+                <p>Expressão criativa, música, pintura e projetos pessoais.</p>
+                <div class="card-actions">
+                    <button class="btn-modal" onclick="event.stopPropagation(); openModal('modal-hobby')">Resumo</button>
+                    <a href="hobby.html" class="btn-link" onclick="event.stopPropagation()">Página Completa &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card Esportes -->
+            <div class="card" onclick="openModal('modal-esportes')">
+                <div class="card-icon">⚡</div>
+                <h2>Esportes</h2>
+                <p>Atividade física, treinos de força e condicionamento.</p>
+                <div class="card-actions">
+                    <button class="btn-modal" onclick="event.stopPropagation(); openModal('modal-esportes')">Resumo</button>
+                    <a href="esportes.html" class="btn-link" onclick="event.stopPropagation()">Página Completa &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card Saúde -->
+            <div class="card" onclick="openModal('modal-saude')">
+                <div class="card-icon">🌿</div>
+                <h2>Saúde</h2>
+                <p>Nutrição consciente, sono reparador e bem-estar mental.</p>
+                <div class="card-actions">
+                    <button class="btn-modal" onclick="event.stopPropagation(); openModal('modal-saude')">Resumo</button>
+                    <a href="saude.html" class="btn-link" onclick="event.stopPropagation()">Página Completa &rarr;</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modais -->
+    <div id="modal-estudo" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-estudo')">&times;</span>
+            <h2>📚 Rotina de Estudo</h2>
+            <p><strong>Meta diária:</strong> 2 horas de estudo focado (Técnica Pomodoro).</p>
+            <ul>
+                <li>Leitura de artigos científicos e livros técnicos</li>
+                <li>Prática de programação e resolução de problemas</li>
+                <li>Revisão de anotações e mapas mentais</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-trabalho" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-trabalho')">&times;</span>
+            <h2>💼 Rotina de Trabalho</h2>
+            <p><strong>Meta diária:</strong> Organização de tarefas e prioridades.</p>
+            <ul>
+                <li>Planeamento matinal de tarefas urgentes</li>
+                <li>Reuniões de alinhamento com a equipa</li>
+                <li>Blocos de trabalho profundo sem distrações</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-lazer" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-lazer')">&times;</span>
+            <h2>🎬 Rotina de Lazer</h2>
+            <p><strong>Meta diária:</strong> Descanso mental de qualidade.</p>
+            <ul>
+                <li>Assistir a episódios de séries ou documentários</li>
+                <li>Tempo com amigos e família</li>
+                <li>Desconexão de e-mails e notificações de trabalho</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-hobby" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-hobby')">&times;</span>
+            <h2>🎨 Rotina de Hobby</h2>
+            <p><strong>Meta semanal:</strong> Dedicação a projetos pessoais sem pressão.</p>
+            <ul>
+                <li>Prática de instrumento musical ou desenho</li>
+                <li>Leitura de ficção e literatura clássica</li>
+                <li>Exploração de novas ferramentas tecnológicas</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-esportes" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-esportes')">&times;</span>
+            <h2>⚡ Rotina de Esportes</h2>
+            <p><strong>Meta diária:</strong> 45 a 60 minutos de treino físico.</p>
+            <ul>
+                <li>Treino de musculação / calistenia</li>
+                <li>Exercícios cardiovasculares (corrida ou ciclismo)</li>
+                <li>Alongamento e mobilidade articular</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-saude" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-saude')">&times;</span>
+            <h2>🌿 Rotina de Saúde</h2>
+            <p><strong>Meta diária:</strong> Hidratação e equilíbrio fisiológico.</p>
+            <ul>
+                <li>Ingestão de pelo menos 2.5 Litros de água</li>
+                <li>Refeições equilibradas e ricas em nutrientes</li>
+                <li>Higiene do sono para garantir 7-8 horas de descanso</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript Integrado -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Fechar o modal ao clicar fora da caixa do conteúdo
+        window.onclick = function(event) {
+            let modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

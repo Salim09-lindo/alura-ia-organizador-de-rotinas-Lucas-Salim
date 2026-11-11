@@ -1,0 +1,288 @@
+/* Configuração Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo com Objetos 3D Flutuantes */
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    perspective: 1000px;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: float3D 12s infinite ease-in-out alternate;
+    opacity: 0.6;
+}
+
+/* Formas Geométricas 3D */
+.cube {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff007f, #7928ca, #00dfd8);
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+    border-radius: 8px;
+}
+
+.pyramid {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 70px solid #00dfd8;
+    filter: drop-shadow(0 0 20px #00dfd8);
+}
+
+.sphere {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ff007f, #7928ca, #0b0c10);
+    box-shadow: 0 0 20px rgba(121, 40, 202, 0.6);
+}
+
+/* Posicionamento individual das formas no espaço */
+.shape-1 { top: 10%; left: 15%; animation-duration: 10s; }
+.shape-2 { top: 70%; left: 80%; animation-duration: 14s; }
+.shape-3 { top: 40%; left: 85%; animation-duration: 11s; }
+.shape-4 { top: 80%; left: 10%; animation-duration: 15s; }
+.shape-5 { top: 20%; left: 70%; animation-duration: 9s; }
+.shape-6 { top: 60%; left: 45%; animation-duration: 13s; }
+
+/* Animação Tridimensional */
+@keyframes float3D {
+    0% {
+        transform: translateY(0px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+    }
+    50% {
+        transform: translateY(-40px) rotateX(180deg) rotateY(90deg) translateZ(100px);
+    }
+    100% {
+        transform: translateY(30px) rotateX(360deg) rotateY(360deg) translateZ(-50px);
+    }
+}
+
+/* Estrutura Principal */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #ff007f, #7928ca, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header p {
+    color: #a0a5b5;
+    font-size: 1.2rem;
+}
+
+/* Cards Grid com efeito de Vidro / 3D */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 15px 35px rgba(121, 40, 202, 0.3);
+    border-color: #00dfd8;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card p {
+    color: #b3b3b3;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-modal {
+    background: linear-gradient(90deg, #ff007f, #7928ca);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.btn-modal:hover {
+    opacity: 0.9;
+}
+
+.btn-link {
+    color: #00dfd8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #ff007f;
+}
+
+/* Modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #14161d;
+    border: 2px solid #7928ca;
+    border-radius: 16px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 0, 127, 0.4);
+    animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ff007f;
+}
+
+.modal-content h2 {
+    color: #00dfd8;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    list-style-position: inside;
+    color: #b3b3b3;
+    line-height: 1.8;
+}
+
+/* Estilização para Páginas Secundárias */
+.page-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(20, 22, 29, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.page-container h1 {
+    color: #00dfd8;
+    margin-bottom: 20px;
+}
+
+.page-container p {
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff007f, #7928ca);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
